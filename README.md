@@ -3,3 +3,5 @@ This project explores the use of Quantum Bayesian Inference to simulate and anal
 As part of the project, the student will implement existing Bayesian networks into quantum circuits and run simulations using Qiskit. The qiskit-machine-learning library will be employed to integrate these circuits into machine learning workflows, facilitating tasks such as rejection sampling, inference, model training, and evaluation. The student will conduct performance testing of quantum models in various attack scenarios, analyze results, refine configurations for better accuracy, and compare quantum-based approaches to classical techniques, investigating potential speedups, improved inference efficiency, and enhanced accuracy.
 
 This project contributes to understanding how quantum computing can address modern cybersecurity challenges, while providing hands-on experience with Qiskit, quantum circuit design, and machine learning workflows tailored to cybersecurity applications.
+
+https://colab.research.google.com/drive/1UP_OOMxfPtg-BXSzDldYM_ZstvsgneDj#scrollTo=4f1ee7dfd66dd6ac
