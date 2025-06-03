@@ -5,3 +5,14 @@ As part of the project, the student will implement existing Bayesian networks in
 This project contributes to understanding how quantum computing can address modern cybersecurity challenges, while providing hands-on experience with Qiskit, quantum circuit design, and machine learning workflows tailored to cybersecurity applications.
 
 https://colab.research.google.com/drive/1UP_OOMxfPtg-BXSzDldYM_ZstvsgneDj#scrollTo=4f1ee7dfd66dd6ac
+
+
+Second version
+
+We are still performing Bayesian inference using the Statevector approach. The difference is that now you're doing it explicitly, step by step, rather than relying on a high-level class like QBayesian to abstract the process for you. In the original QBayesian setup, most of the inference was handled behind the scenes. You would specify your quantum circuit, set evidence and queries, and call an inference method that automatically returned conditional probabilities by sampling the quantum states and applying Bayes’ rule internally.
+In contrast, when you use the Statevector method, you take full control over the entire process. You begin by building a quantum circuit that encodes the prior distributions and conditional dependencies just like before. After simulating the circuit with Statevector.from_instruction, you obtain the full quantum state amplitudes. These amplitudes are then converted into joint probabilities using the probabilities_dict method, which gives you the likelihoods of all combinations of outcomes in the computational basis.
+Once you have the joint distribution, you apply Bayesian inference manually. This means you filter the outcomes based on your evidence — for example, selecting only the bitstrings where the variable you’re conditioning on has a certain value. After isolating the relevant outcomes, you normalize their probabilities to ensure they sum to one. This normalization effectively gives you the posterior distribution: the updated belief about your hypothesis, given the evidence.
+In practical terms, the quantum circuit is still encoding a Bayesian network. You're still modeling how one variable depends on another, such as an intrusion influencing an alarm. You're still using quantum mechanics to simulate that relationship. But now, instead of letting QBayesian do the inference math for you, you're extracting probabilities yourself, conditioning on evidence, and computing posteriors directly. This is more manual, but also more transparent and customizable. It allows you to precisely control every step of the reasoning process, which is especially valuable in a research context like quantum-enhanced intrusion detection.
+So yes, it's still Bayesian inference — but instead of using a class designed to automate the process, you're using raw quantum state data and performing the inference calculations explicitly, guided by the same principles.
+
+https://colab.research.google.com/drive/13IkHltaOX2WLIHrFkZ-PVfvEZL6Y-mys?usp=sharing
